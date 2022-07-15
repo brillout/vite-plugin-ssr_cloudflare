@@ -1,1 +1,1 @@
-Example of using wrangler's webpack bundler.
+Example of using wrangler.
