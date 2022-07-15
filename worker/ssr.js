@@ -3,6 +3,7 @@ import { renderPage } from 'vite-plugin-ssr'
 export { handleSsr }
 
 async function handleSsr(url) {
+  console.log('url', url)
   const pageContextInit = {
     url,
     fetch: (...args) => fetch(...args),

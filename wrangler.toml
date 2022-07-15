@@ -4,6 +4,7 @@ account_id = ""
 workers_dev = true
 type = "webpack"
 webpack_config = "./webpack.config.js"
+node_compat = true
 
 [site]
 bucket = "./dist/client"
