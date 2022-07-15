@@ -1,13 +1,9 @@
-import { renderPage } from 'vite-plugin-ssr'
-
 export { handleSsr }
 
+import { renderPage } from 'vite-plugin-ssr'
+
 async function handleSsr(url) {
-  console.log('url', url)
-  const pageContextInit = {
-    url,
-    fetch: (...args) => fetch(...args),
-  }
+  const pageContextInit = { url }
   const pageContext = await renderPage(pageContextInit)
   const { httpResponse } = pageContext
   if (!httpResponse) {
@@ -16,7 +12,7 @@ async function handleSsr(url) {
     const { body, statusCode, contentType } = httpResponse
     return new Response(body, {
       headers: { 'content-type': contentType },
-      status: statusCode,
+      status: statusCode
     })
   }
 }
